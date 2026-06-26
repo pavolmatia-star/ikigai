@@ -60,7 +60,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Figtree',system-ui,sans-serif;background:var(--red);color:var(--ink);
-  transition:background .3s ease,color .3s ease}
   -webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 img{max-width:100%;display:block}
@@ -322,23 +321,22 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
   .hcard:first-child{grid-column:1/-1}
 }
 @media(max-width:720px){
-  .nav-links{position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;flex-direction:column;
-    background:var(--red-deep);padding:80px 32px 40px;gap:0;display:flex;
+  .nav-links{position:fixed;top:0;left:0;width:100%;height:100dvh;z-index:999;flex-direction:column;
+    background:var(--red-deep);padding:clamp(60px,12vh,90px) clamp(20px,6vw,40px) clamp(20px,5vh,40px);gap:0;display:flex;
     justify-content:center;align-items:flex-start;overflow-y:auto;
     opacity:0;pointer-events:none;transform:translateY(-16px);
     transition:opacity .35s ease,transform .35s ease}
   .nav-links.open{opacity:1;pointer-events:auto;transform:translateY(0)}
-  .nav-links a{font-size:1.5rem;padding:20px 0;font-family:'Oswald';font-weight:700;
+  .nav-links a{font-size:clamp(1.1rem,3.5vh,1.5rem);padding:clamp(8px,2vh,20px) 0;font-family:'Oswald';font-weight:700;
     text-transform:uppercase;color:var(--cream-soft);letter-spacing:.04em;border:none!important;
     border-bottom:1.5px solid var(--mustard)!important;width:100%;
     opacity:0;transform:translateX(-20px);transition:opacity .28s ease,transform .28s ease}
-  .nav-links .call-btn{border-bottom:none!important}
   .nav-links a.active,.nav-links a:hover{color:var(--cream-soft)!important}
-  .nav-links .call-btn{font-size:1.4rem;padding:12px 28px;align-self:center;margin-top:8px;
+  .nav-links .call-btn{font-size:clamp(1rem,2.5vh,1.4rem);padding:10px 24px;align-self:center;margin-top:clamp(4px,1.5vh,12px);
     justify-content:center;text-align:center;color:var(--ink)!important;
     opacity:0;transform:translateX(-20px);transition:opacity .28s ease,transform .28s ease;border-bottom:none!important}
   .nav-links .nav-home{display:block;text-align:left}
-  .nav-links .nav-home svg{width:28px;height:28px}
+  .nav-links .nav-home svg{width:clamp(22px,3.5vh,30px);height:clamp(22px,3.5vh,30px)}
   .nav-links.open a:nth-child(1){opacity:1;transform:none;transition-delay:.08s}
   .nav-links.open a:nth-child(2){opacity:1;transform:none;transition-delay:.13s}
   .nav-links.open a:nth-child(3){opacity:1;transform:none;transition-delay:.18s}
@@ -824,9 +822,18 @@ var I18N={
   status_open:"Currently open",status_closed:"Currently closed"}
 };
 var REVIEWS=[
- {sk:"Úžasný burger! Bol som zatiaľ 2x a dvakrát som bol nadmieru spokojný. Chválim možnosť výberu mäsa, aj vegetariánske náhrady a tak isto aj možnosť objednať si \"malé\" hranolky, ktorých je stále dosť. Priestory sú pekné, nič nové, proste neurazí ani nenadchne. Obsluha bola vždy veľmi príjemná, nikdy sme nečakali dlho kým sa nám venovali. No a jediná menšia výčitka je menšie parkovisko, ale napriek tomu som vždy mal šťastie na miesto, ale v špičke to bude asi problém. Určite odporúčam a chválim!",who:"Ľuboš Kušnír"},
- {sk:"Dnes sme ochutnali prvý krát a sme nadšení. Jedlo vynikajúce. Z kvalitných surovín, poctivo pripravené, precízne zabalené...okrem toho veľmi príjemná komunikácia, ochota, rýchlosť prípravy.👌 Vidno, že to robia ľudia, pre ktorých to nie je len biznis, ale majú radi svoju prácu a vážia si zákazníka. ❤️ 100% odporúčam 👌🤗",who:"Jana Kaletová"},
- {sk:"Ja som šokovany. Bol to jeden z najlepsich burgrov aky som kedy jedol. Sa bezpochyby rovna tym najlepsim burgrom v Prešove. Top strop 10/10. Som prekvapeny, ze v takom malom mestecku sa nachadza takato restauracia. Keby bola vo velkom meste urcite by bola vyrovnanou konkurenciou.",who:"Marek Lopuchovsky"}
+ {sk:"Úžasný burger! Bol som zatiaľ 2x a dvakrát som bol nadmieru spokojný. Chválim možnosť výberu mäsa, aj vegetariánske náhrady a tak isto aj možnosť objednať si \"malé\" hranolky, ktorých je stále dosť. Priestory sú pekné, nič nové, proste neurazí ani nenadchne. Obsluha bola vždy veľmi príjemná, nikdy sme nečakali dlho kým sa nám venovali. No a jediná menšia výčitka je menšie parkovisko, ale napriek tomu som vždy mal šťastie na miesto, ale v špičke to bude asi problém. Určite odporúčam a chválim!",
+  pl:"Niesamowity burger! Byłem już 2 razy i za każdym razem byłem więcej niż zadowolony. Chwalę możliwość wyboru mięsa, wegetariańskie zamienniki oraz możliwość zamówienia \"małych\" frytek, których i tak jest sporo. Obsługa zawsze bardzo miła, nigdy długo nie czekaliśmy. Jedyna mała uwaga to małe parkingi, ale zawsze miałem szczęście znaleźć miejsce. Zdecydowanie polecam!",
+  en:"Amazing burger! I've been twice and both times I was more than satisfied. I love the choice of meat, vegetarian options and the ability to order \"small\" fries which are still plenty. The staff was always very pleasant, we never waited long. The only minor downside is the small parking lot, but I always found a spot. Definitely recommend!",
+  who:"Ľuboš Kušnír"},
+ {sk:"Dnes sme ochutnali prvý krát a sme nadšení. Jedlo vynikajúce. Z kvalitných surovín, poctivo pripravené, precízne zabalené...okrem toho veľmi príjemná komunikácia, ochota, rýchlosť prípravy.👌 Vidno, že to robia ľudia, pre ktorých to nie je len biznis, ale majú radi svoju prácu a vážia si zákazníka. ❤️ 100% odporúčam 👌🤗",
+  pl:"Dzisiaj spróbowaliśmy po raz pierwszy i jesteśmy zachwyceni. Jedzenie wyśmienite. Z wysokiej jakości składników, uczciwie przygotowane, precyzyjnie zapakowane... poza tym bardzo miła komunikacja, chęć pomocy, szybkość przygotowania. 👌 Widać, że robią to ludzie, dla których to nie jest tylko biznes, ale kochają swoją pracę i szanują klienta. ❤️ 100% polecam 👌🤗",
+  en:"We tried it for the first time today and we're thrilled. The food is excellent. Made from quality ingredients, honestly prepared, precisely packaged... on top of that very pleasant communication, helpfulness, speed of preparation. 👌 You can tell it's made by people for whom this isn't just a business — they love their work and value their customers. ❤️ 100% recommend 👌🤗",
+  who:"Jana Kaletová"},
+ {sk:"Ja som šokovany. Bol to jeden z najlepsich burgrov aky som kedy jedol. Sa bezpochyby rovna tym najlepsim burgrom v Prešove. Top strop 10/10. Som prekvapeny, ze v takom malom mestecku sa nachadza takato restauracia. Keby bola vo velkom meste urcite by bola vyrovnanou konkurenciou.",
+  pl:"Jestem w szoku. To był jeden z najlepszych burgerów, jakie kiedykolwiek jadłem. Bez wątpienia dorównuje najlepszym burgerom w Preszowie. Top 10/10. Jestem zaskoczony, że w tak małym miasteczku znajduje się taka restauracja. Gdyby była w dużym mieście, na pewno byłaby poważną konkurencją.",
+  en:"I'm shocked. It was one of the best burgers I've ever had. It's without a doubt on par with the best burgers in Prešov. Top 10/10. I'm surprised that such a restaurant exists in such a small town. If it were in a big city, it would definitely be serious competition.",
+  who:"Marek Lopuchovsky"}
 ];
 
 var LANG="sk";
