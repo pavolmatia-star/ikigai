@@ -627,11 +627,11 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
       </div>
       <div class="hcard" data-day="5">
         <div class="hcard-day" data-i18n="hours_fri">Piatok</div>
-        <div class="hcard-time">14:00 – 0:00</div>
+        <div class="hcard-time">14:00 – 00:00</div>
       </div>
       <div class="hcard" data-day="6">
         <div class="hcard-day" data-i18n="hours_sat">Sobota</div>
-        <div class="hcard-time">14:00 – 0:00</div>
+        <div class="hcard-time">14:00 – 00:00</div>
       </div>
       <div class="hcard" data-day="0">
         <div class="hcard-day" data-i18n="hours_sun">Nedeľa</div>
@@ -1233,15 +1233,7 @@ document.getElementById("yr").textContent=new Date().getFullYear();
   document.getElementById('popup-close').addEventListener('click',closePopup);
   document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
-  var triggered=false;
-  var obs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting&&!triggered){
-      triggered=true;
-      obs.disconnect();
-      setTimeout(function(){document.getElementById('popup').classList.add('open');},400);
-    }
-  },{threshold:0.3});
-  obs.observe(document.getElementById('ponuka'));
+  setTimeout(function(){document.getElementById('popup').classList.add('open');},1500);
 })();
 </script>
 </body>
