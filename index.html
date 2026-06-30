@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="Street food s dušou — burgery, toasty, hot-dogy a viac.">
 <meta name="twitter:image" content="https://ikigaistreetfood.sk/img/hero/1.webp">
 <link rel="canonical" href="https://ikigaistreetfood.sk/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"IKIGAI Streetfood","description":"Street food s dušou — burgery, toasty, hot-dogy, wrapy a poutine.","telephone":"+421950893149","address":{"@type":"PostalAddress","streetAddress":"Sabinovská 64/3","postalCode":"082 71","addressLocality":"Lipany","addressCountry":"SK"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"20:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"277"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"IKIGAI Streetfood","description":"Street food s dušou — burgery, toasty, hot-dogy, wrapy a poutine.","telephone":"+421950893149","address":{"@type":"PostalAddress","streetAddress":"Sabinovská 64/3","postalCode":"082 71","addressLocality":"Lipany","addressCountry":"SK"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"14:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"14:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"16:00","closes":"23:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"277"}}</script>
 <link rel="icon" id="favicon" href="logo.jpg" type="image/jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,12 +206,15 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
 .rev-more{display:inline-block;margin-top:14px;font-family:'Oswald';font-weight:600;font-size:.8rem;text-transform:uppercase;color:var(--red);letter-spacing:.04em;border-bottom:2px solid var(--red);padding-bottom:1px;align-self:flex-start}
 
 /* hours section */
-.hours-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
-.hcard{border:3px solid var(--ink);border-radius:18px;padding:28px 20px;box-shadow:5px 5px 0 var(--ink);text-align:center}
-.hcard-day{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:.88rem;color:var(--ink-soft);letter-spacing:.07em;margin-bottom:10px}
-.hcard-time{font-family:'Anton';font-size:2.2rem;line-height:1.1;color:var(--ink)}
+.hours-cards{display:flex;flex-direction:column;gap:0;margin-top:38px;border:3px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+.hcard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 26px;background:var(--paper);border-bottom:2px solid rgba(28,20,14,.12)}
+.hcard:last-child{border-bottom:none}
+.hcard-day{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:.95rem;color:var(--ink-soft);letter-spacing:.06em;min-width:110px}
+.hcard-time{font-family:'Anton';font-size:1.65rem;line-height:1;color:var(--ink)}
+.hcard-closed{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:1rem;color:#b0897a;letter-spacing:.06em}
 .hcard-wk,.hcard-wknd{background:var(--paper)}
-.hcard-kitchen{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ink-soft);margin-top:10px;line-height:1.2}
+.hours-ig-note{margin-top:18px;display:flex;align-items:center;gap:10px;font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ink-soft);line-height:1.4}
+.hours-ig-note a{color:var(--red-deep);font-weight:700;text-decoration:underline}
 
 /* map section */
 .sec-ink{background:var(--ink);color:var(--cream-soft)}
@@ -298,8 +301,12 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
 .rev-grid.in .rev:nth-child(2){transition-delay:.18s}
 .rev-grid.in .rev:nth-child(3){transition-delay:.3s}
 .hours-cards.in .hcard:nth-child(1){transition-delay:.05s}
-.hours-cards.in .hcard:nth-child(2){transition-delay:.15s}
-.hours-cards.in .hcard:nth-child(3){transition-delay:.25s}
+.hours-cards.in .hcard:nth-child(2){transition-delay:.1s}
+.hours-cards.in .hcard:nth-child(3){transition-delay:.15s}
+.hours-cards.in .hcard:nth-child(4){transition-delay:.2s}
+.hours-cards.in .hcard:nth-child(5){transition-delay:.25s}
+.hours-cards.in .hcard:nth-child(6){transition-delay:.3s}
+.hours-cards.in .hcard:nth-child(7){transition-delay:.35s}
 .hcard{transition:opacity .55s ease,transform .55s ease,box-shadow .22s}
 .hcard:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
 .hcard-today{transform:translate(-4px,-4px);background:var(--red-deep)!important;border-color:var(--red-deep)!important;box-shadow:10px 10px 0 var(--ink)!important}
@@ -333,7 +340,7 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
   .rev-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr;gap:30px}
   .hours-cards{grid-template-columns:1fr 1fr;gap:14px}
-  .hcard:first-child{grid-column:1/-1}
+  .hcard{padding:13px 18px}
 }
 @media(max-width:720px){
   .nav-links{position:fixed;top:0;left:0;width:100%;height:100dvh;z-index:999;flex-direction:column;
@@ -389,7 +396,7 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
 }
 @media(max-width:560px){
   .hours-cards{grid-template-columns:1fr}
-  .hcard:first-child{grid-column:auto}
+  .hcard-day{min-width:90px}
   .map-frame iframe{height:260px}
   .map-address{flex-direction:column;align-items:flex-start}
   .gal-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -425,9 +432,13 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
 .hours-cards .hcard{opacity:0;transform:translateY(20px);
   transition:opacity .55s ease,transform .55s ease,box-shadow .22s}
 .hours-cards.in .hcard{opacity:1;transform:translateY(0)}
-.hours-cards.in .hcard:nth-child(1){transition-delay:.05s}
-.hours-cards.in .hcard:nth-child(2){transition-delay:.18s}
-.hours-cards.in .hcard:nth-child(3){transition-delay:.31s}
+.hours-cards.in .hcard:nth-child(1){transition-delay:.04s}
+.hours-cards.in .hcard:nth-child(2){transition-delay:.09s}
+.hours-cards.in .hcard:nth-child(3){transition-delay:.14s}
+.hours-cards.in .hcard:nth-child(4){transition-delay:.19s}
+.hours-cards.in .hcard:nth-child(5){transition-delay:.24s}
+.hours-cards.in .hcard:nth-child(6){transition-delay:.29s}
+.hours-cards.in .hcard:nth-child(7){transition-delay:.34s}
 /* keep hover & today overrides working after reveal */
 .hours-cards.in .hcard:hover{transform:translate(-3px,-3px)}
 .hours-cards.in .hcard.hcard-today{transform:translate(-4px,-4px)}
@@ -598,22 +609,39 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
       <h2 class="sec-title" data-i18n="hours_title">Otváracie hodiny</h2>
     </div>
     <div class="hours-cards reveal">
-      <div class="hcard hcard-wk">
-        <div class="hcard-day" data-i18n="hours_monfri">Po – Pia</div>
-        <div class="hcard-time">10:00 – 21:00</div>
-        <div class="hcard-kitchen"><span data-i18n="hours_kitchen">kuchyňa otvorená do</span> 20:30</div>
+      <div class="hcard" data-day="1">
+        <div class="hcard-day" data-i18n="hours_mon">Pondelok</div>
+        <div class="hcard-closed" data-i18n="hours_closed">Zatvorené</div>
       </div>
-      <div class="hcard hcard-wknd">
+      <div class="hcard" data-day="2">
+        <div class="hcard-day" data-i18n="hours_tue">Utorok</div>
+        <div class="hcard-time">14:00 – 23:00</div>
+      </div>
+      <div class="hcard" data-day="3">
+        <div class="hcard-day" data-i18n="hours_wed">Streda</div>
+        <div class="hcard-time">14:00 – 23:00</div>
+      </div>
+      <div class="hcard" data-day="4">
+        <div class="hcard-day" data-i18n="hours_thu">Štvrtok</div>
+        <div class="hcard-time">14:00 – 23:00</div>
+      </div>
+      <div class="hcard" data-day="5">
+        <div class="hcard-day" data-i18n="hours_fri">Piatok</div>
+        <div class="hcard-time">14:00 – 0:00</div>
+      </div>
+      <div class="hcard" data-day="6">
         <div class="hcard-day" data-i18n="hours_sat">Sobota</div>
-        <div class="hcard-time">11:00 – 22:00</div>
-        <div class="hcard-kitchen"><span data-i18n="hours_kitchen">kuchyňa otvorená do</span> 21:30</div>
+        <div class="hcard-time">14:00 – 0:00</div>
       </div>
-      <div class="hcard hcard-wknd">
+      <div class="hcard" data-day="0">
         <div class="hcard-day" data-i18n="hours_sun">Nedeľa</div>
-        <div class="hcard-time">11:00 – 20:00</div>
-        <div class="hcard-kitchen"><span data-i18n="hours_kitchen">kuchyňa otvorená do</span> 19:30</div>
+        <div class="hcard-time">16:00 – 23:00</div>
       </div>
     </div>
+    <p class="hours-ig-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" style="flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <span data-i18n="hours_ig_note">Otváracie hodiny počas sviatkov a mimoriadnych situácií aktualizujeme na <a href="https://instagram.com/ikigai_streetfood" target="_blank" rel="noopener">@ikigai_streetfood</a>.</span>
+    </p>
   </div>
 </section>
 
@@ -794,7 +822,7 @@ var I18N={
   contact_call:"Zavolajte nám",contact_note:"Objednávky vybavujeme telefonicky.",
   contact_hours:"Otváracie hodiny",contact_where:"Kde nás nájdete",contact_map:"Otvoriť v mapách →",
   hours_kicker:"kedy nás nájdeš",hours_title:"Otváracie hodiny",
-  hours_monfri:"Po – Pia",hours_sat:"Sobota",hours_sun:"Nedeľa",hours_kitchen:"kuchyňa otvorená do",foot_family:"IKIGAI family ♡",
+  hours_mon:"Pondelok",hours_tue:"Utorok",hours_wed:"Streda",hours_thu:"Štvrtok",hours_fri:"Piatok",hours_sat:"Sobota",hours_sun:"Nedeľa",hours_closed:"Zatvorené",hours_ig_note:'Otváracie hodiny počas sviatkov a mimoriadnych situácií aktualizujeme na <a href="https://instagram.com/ikigai_streetfood" target="_blank" rel="noopener">@ikigai_streetfood</a>.',foot_family:"IKIGAI family ♡",
   map_kicker:"kde sme",map_title:"Nájdite nás",
   badge_excellent:"Vynikajúce",badge_based:"Na základe",badge_reviews:"recenzií",rev_more:"Čítať viac →",
   rights:"Všetky práva vyhradené.",link_privacy:"Ochrana osobných údajov",link_cookies:"Cookies",gal_ph:"Pridaj fotku",gal_hint:"Ťukni na fotku pre zobrazenie všetkých",
@@ -818,7 +846,7 @@ var I18N={
   contact_call:"Zadzwoń do nas",contact_note:"Zamówienia przyjmujemy telefonicznie.",
   contact_hours:"Godziny otwarcia",contact_where:"Gdzie nas znajdziesz",contact_map:"Otwórz w mapach →",
   hours_kicker:"kiedy nas znajdziesz",hours_title:"Godziny otwarcia",
-  hours_monfri:"Pon – Pt",hours_sat:"Sobota",hours_sun:"Niedziela",hours_kitchen:"kuchnia czynna do",foot_family:"IKIGAI family ♡",
+  hours_mon:"Poniedziałek",hours_tue:"Wtorek",hours_wed:"Środa",hours_thu:"Czwartek",hours_fri:"Piątek",hours_sat:"Sobota",hours_sun:"Niedziela",hours_closed:"Zamknięte",hours_ig_note:'Godziny otwarcia w święta i wyjątkowych sytuacjach aktualizujemy na <a href="https://instagram.com/ikigai_streetfood" target="_blank" rel="noopener">@ikigai_streetfood</a>.',foot_family:"IKIGAI family ♡",
   map_kicker:"gdzie jesteśmy",map_title:"Znajdź nas",
   badge_excellent:"Doskonałe",badge_based:"Na podstawie",badge_reviews:"opinii",rev_more:"Czytaj więcej →",
   rights:"Wszelkie prawa zastrzeżone.",link_privacy:"Ochrona danych osobowych",link_cookies:"Pliki cookie",gal_ph:"Dodaj zdjęcie",gal_hint:"Dotknij zdjęcia, aby zobaczyć wszystkie",
@@ -842,7 +870,7 @@ var I18N={
   contact_call:"Call us",contact_note:"Orders are handled by phone.",
   contact_hours:"Opening hours",contact_where:"Find us",contact_map:"Open in maps →",
   hours_kicker:"when to find us",hours_title:"Opening hours",
-  hours_monfri:"Mon – Fri",hours_sat:"Saturday",hours_sun:"Sunday",hours_kitchen:"kitchen open until",foot_family:"IKIGAI family ♡",
+  hours_mon:"Monday",hours_tue:"Tuesday",hours_wed:"Wednesday",hours_thu:"Thursday",hours_fri:"Friday",hours_sat:"Saturday",hours_sun:"Sunday",hours_closed:"Closed",hours_ig_note:'Opening hours during holidays and special occasions are updated on <a href="https://instagram.com/ikigai_streetfood" target="_blank" rel="noopener">@ikigai_streetfood</a>.',foot_family:"IKIGAI family ♡",
   map_kicker:"where we are",map_title:"Find us",
   badge_excellent:"Excellent",badge_based:"Based on",badge_reviews:"reviews",rev_more:"Read more →",
   rights:"All rights reserved.",link_privacy:"Privacy policy",link_cookies:"Cookies",gal_ph:"Add a photo",gal_hint:"Tap a photo to see all",
@@ -1139,18 +1167,18 @@ document.getElementById("yr").textContent=new Date().getFullYear();
 <script>
 (function(){
   var day=new Date().getDay();
-  var cards=document.querySelectorAll('.hcard');
-  // 0=Sun, 1-5=Mon-Fri, 6=Sat
-  if(day>=1&&day<=5)cards[0].classList.add('hcard-today');
-  else if(day===6)cards[1].classList.add('hcard-today');
-  else if(day===0)cards[2].classList.add('hcard-today');
-  // open/closed status
+  // highlight today's card via data-day attribute (0=Sun,1=Mon...6=Sat)
+  document.querySelectorAll('.hcard[data-day]').forEach(function(c){
+    if(parseInt(c.getAttribute('data-day'))===day)c.classList.add('hcard-today');
+  });
+  // open/closed status — Po zatvorené, Ut-Št 14-23, Pi-So 14-0(=next day), Ne 16-23
   var now=new Date();
   var h=now.getHours(),m=now.getMinutes();
   var mins=h*60+m;
-  var schedule={1:[600,1260],2:[600,1260],3:[600,1260],4:[600,1260],5:[600,1260],6:[660,1320],0:[660,1200]};
+  // Pi/So: closes at 0:00 (midnight) = 1440 min but we treat as next day open, so range ends at 1440
+  var schedule={1:null,2:[840,1380],3:[840,1380],4:[840,1380],5:[840,1440],6:[840,1440],0:[960,1380]};
   var range=schedule[day];
-  var isOpen=range&&mins>=range[0]&&mins<range[1];
+  var isOpen=range!=null&&mins>=range[0]&&mins<range[1];
   var el=document.getElementById('open-status');
   function updateStatus(){
     if(!el)return;
