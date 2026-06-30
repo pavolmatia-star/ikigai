@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IKIGAI Streetfood — Burgery, Toasty & Street Food | Bratislava</title>
-<meta name="description" content="IKIGAI Streetfood — šťavnaté burgery, toasty, hot-dogy, wrapy a poutine. Poctivé pečivo z lokálnej pekárne. Street food s dušou v Bratislave.">
-<meta name="keywords" content="streetfood bratislava, burgery bratislava, toasty, hot-dogy, poutine, fast food, IKIGAI">
+<title>IKIGAI Streetfood — Burgery, Toasty & Street Food | Lipany</title>
+<meta name="description" content="IKIGAI Streetfood Lipany — šťavnaté burgery, toasty, hot-dogy, wrapy a poutine. Poctivé pečivo z lokálnej pekárne. Street food s dušou.">
+<meta name="keywords" content="streetfood lipany, burgery lipany, toasty, hot-dogy, poutine, fast food, IKIGAI, Sabinovská Lipany">
 <meta name="robots" content="index, follow">
 <meta name="author" content="IKIGAI Streetfood">
-<meta property="og:title" content="IKIGAI Streetfood — Burgery & Street Food Bratislava">
-<meta property="og:description" content="Šťavnaté burgery, toasty, hot-dogy a wrapy. Poctivé pečivo z lokálnej pekárne. Street food s dušou.">
+<meta property="og:title" content="IKIGAI Streetfood — Burgery & Street Food Lipany">
+<meta property="og:description" content="Šťavnaté burgery, toasty, hot-dogy a wrapy v Lipanoch. Poctivé pečivo z lokálnej pekárne. Street food s dušou.">
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="sk_SK">
 <meta property="og:image" content="https://ikigaistreetfood.sk/img/hero/1.webp">
@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="Street food s dušou — burgery, toasty, hot-dogy a viac.">
 <meta name="twitter:image" content="https://ikigaistreetfood.sk/img/hero/1.webp">
 <link rel="canonical" href="https://ikigaistreetfood.sk/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"IKIGAI Streetfood","description":"Street food s dušou — burgery, toasty, hot-dogy, wrapy a poutine.","telephone":"+421950893149","address":{"@type":"PostalAddress","addressLocality":"Bratislava","addressCountry":"SK"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"20:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"277"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"IKIGAI Streetfood","description":"Street food s dušou — burgery, toasty, hot-dogy, wrapy a poutine.","telephone":"+421950893149","address":{"@type":"PostalAddress","streetAddress":"Sabinovská 64/3","postalCode":"082 71","addressLocality":"Lipany","addressCountry":"SK"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"20:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"277"}}</script>
 <link rel="icon" id="favicon" href="logo.jpg" type="image/jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,6 +227,21 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
 .map-addr-txt{font-size:1rem;color:#caa979;line-height:1.75}
 .map-cta{display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--ink);border:3px solid var(--ink);border-radius:50px;font-family:'Oswald';font-weight:700;text-transform:uppercase;padding:12px 26px;box-shadow:5px 5px 0 rgba(250,232,192,.3);white-space:nowrap}
 .map-cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(250,232,192,.45);color:var(--ink)}
+
+/* popup oznam – phone mockup */
+.popup-overlay{position:fixed;inset:0;background:rgba(28,20,14,.7);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s}
+.popup-overlay.open{opacity:1;pointer-events:all}
+.popup-phone{position:relative;transform:translateY(28px) scale(.93);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.popup-overlay.open .popup-phone{transform:none}
+.popup-close{position:absolute;top:-14px;right:-14px;z-index:10;width:36px;height:36px;border-radius:50%;background:var(--mustard);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);cursor:pointer;font-size:1rem;line-height:1;display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:700;transition:transform .15s,box-shadow .15s}
+.popup-close:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.phone-shell{background:var(--ink);border-radius:44px;padding:14px 10px 20px;width:280px;border:3px solid var(--ink);box-shadow:0 0 0 5px var(--mustard),8px 8px 0 rgba(28,20,14,.5)}
+.phone-notch{width:72px;height:20px;background:#111;border-radius:0 0 12px 12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;gap:6px}
+.phone-notch-cam{width:8px;height:8px;border-radius:50%;background:#222;border:1.5px solid #333}
+.phone-notch-spk{width:28px;height:4px;border-radius:2px;background:#222}
+.phone-screen{border-radius:28px;overflow:hidden;background:#000;line-height:0}
+.phone-screen img{width:100%;display:block}
+.phone-bar{width:44px;height:5px;background:rgba(255,255,255,.25);border-radius:3px;margin:14px auto 0}
 
 /* footer */
 .foot{background:var(--ink);color:var(--cream-soft);border-top:4px solid var(--mustard);padding:64px 0 30px}
@@ -732,7 +747,11 @@ h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.02;text-transform:upperca
     </div>
     <div class="foot-bottom">
       <span>© <span id="yr"></span> IKIGAI Streetfood</span>
-      <span data-i18n="rights">Všetky práva vyhradené.</span>
+      <span style="display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end">
+        <a id="lnk-privacy" href="ochrana-osobnych-udajov.html" style="color:#caa979;font-size:.82rem" data-i18n="link_privacy">Ochrana osobných údajov</a>
+        <a id="lnk-cookies" href="cookies.html" style="color:#caa979;font-size:.82rem" data-i18n="link_cookies">Cookies</a>
+        <span data-i18n="rights">Všetky práva vyhradené.</span>
+      </span>
     </div>
   </div>
 </footer>
@@ -778,8 +797,9 @@ var I18N={
   hours_monfri:"Po – Pia",hours_sat:"Sobota",hours_sun:"Nedeľa",hours_kitchen:"kuchyňa otvorená do",foot_family:"IKIGAI family ♡",
   map_kicker:"kde sme",map_title:"Nájdite nás",
   badge_excellent:"Vynikajúce",badge_based:"Na základe",badge_reviews:"recenzií",rev_more:"Čítať viac →",
-  rights:"Všetky práva vyhradené.",gal_ph:"Pridaj fotku",gal_hint:"Ťukni na fotku pre zobrazenie všetkých",
-  status_open:"Momentálne otvorené",status_closed:"Momentálne zatvorené"},
+  rights:"Všetky práva vyhradené.",link_privacy:"Ochrana osobných údajov",link_cookies:"Cookies",gal_ph:"Pridaj fotku",gal_hint:"Ťukni na fotku pre zobrazenie všetkých",
+  status_open:"Momentálne otvorené",status_closed:"Momentálne zatvorené",
+  popup_kicker:"oznam",popup_title:"Zmena v menu",popup_msg:"Aktuálne upravujeme naše menu. Niektoré položky nemusia byť dočasne dostupné. Ďakujeme za pochopenie!",popup_btn:"Rozumiem"},
  pl:{nav_menu:"Menu",nav_about:"O nas",nav_gallery:"Galeria",nav_reviews:"Opinie",nav_hours:"Godziny otwarcia",nav_map:"Mapa",nav_call:"Zadzwoń",
   hero_kicker:"witaj tam, gdzie życie smakuje",hero_title:"Streetfood<br>z duszą",
   hero_sub:"Soczyste burgery, uczciwe pieczywo z lokalnej piekarni i smaki, dla których warto wrócić.",
@@ -801,8 +821,9 @@ var I18N={
   hours_monfri:"Pon – Pt",hours_sat:"Sobota",hours_sun:"Niedziela",hours_kitchen:"kuchnia czynna do",foot_family:"IKIGAI family ♡",
   map_kicker:"gdzie jesteśmy",map_title:"Znajdź nas",
   badge_excellent:"Doskonałe",badge_based:"Na podstawie",badge_reviews:"opinii",rev_more:"Czytaj więcej →",
-  rights:"Wszelkie prawa zastrzeżone.",gal_ph:"Dodaj zdjęcie",gal_hint:"Dotknij zdjęcia, aby zobaczyć wszystkie",
-  status_open:"Aktualnie otwarte",status_closed:"Aktualnie zamknięte"},
+  rights:"Wszelkie prawa zastrzeżone.",link_privacy:"Ochrona danych osobowych",link_cookies:"Pliki cookie",gal_ph:"Dodaj zdjęcie",gal_hint:"Dotknij zdjęcia, aby zobaczyć wszystkie",
+  status_open:"Aktualnie otwarte",status_closed:"Aktualnie zamknięte",
+  popup_kicker:"ogłoszenie",popup_title:"Zmiana w menu",popup_msg:"Aktualnie aktualizujemy nasze menu. Niektóre pozycje mogą być chwilowo niedostępne. Dziękujemy za wyrozumiałość!",popup_btn:"Rozumiem"},
  en:{nav_menu:"Menu",nav_about:"About",nav_gallery:"Gallery",nav_reviews:"Reviews",nav_hours:"Opening hours",nav_map:"Map",nav_call:"Call us",
   hero_kicker:"welcome where life tastes good",hero_title:"Street food<br>with soul",
   hero_sub:"Juicy burgers, honest bread from a local bakery and flavours worth coming back for.",
@@ -824,8 +845,9 @@ var I18N={
   hours_monfri:"Mon – Fri",hours_sat:"Saturday",hours_sun:"Sunday",hours_kitchen:"kitchen open until",foot_family:"IKIGAI family ♡",
   map_kicker:"where we are",map_title:"Find us",
   badge_excellent:"Excellent",badge_based:"Based on",badge_reviews:"reviews",rev_more:"Read more →",
-  rights:"All rights reserved.",gal_ph:"Add a photo",gal_hint:"Tap a photo to see all",
-  status_open:"Currently open",status_closed:"Currently closed"}
+  rights:"All rights reserved.",link_privacy:"Privacy policy",link_cookies:"Cookies",gal_ph:"Add a photo",gal_hint:"Tap a photo to see all",
+  status_open:"Currently open",status_closed:"Currently closed",
+  popup_kicker:"notice",popup_title:"Menu update",popup_msg:"We're currently updating our menu. Some items may be temporarily unavailable. Thank you for your understanding!",popup_btn:"Got it"}
 };
 var REVIEWS=[
  {sk:"Úžasný burger! Bol som zatiaľ 2x a dvakrát som bol nadmieru spokojný. Chválim možnosť výberu mäsa, aj vegetariánske náhrady a tak isto aj možnosť objednať si \"malé\" hranolky, ktorých je stále dosť. Priestory sú pekné, nič nové, proste neurazí ani nenadchne. Obsluha bola vždy veľmi príjemná, nikdy sme nečakali dlho kým sa nám venovali. No a jediná menšia výčitka je menšie parkovisko, ale napriek tomu som vždy mal šťastie na miesto, ale v špičke to bude asi problém. Určite odporúčam a chválim!",
@@ -953,6 +975,7 @@ function applyLang(l){
  document.dispatchEvent(new Event('langchange'));
 }
 document.getElementById("langs").addEventListener("click",function(e){var b=e.target.closest("button");if(b)applyLang(b.dataset.lang);});
+document.addEventListener('langchange',function(){var s=LANG==='sk'?'':'?lang='+LANG;document.getElementById('lnk-privacy').href='ochrana-osobnych-udajov.html'+s;document.getElementById('lnk-cookies').href='cookies.html'+s;});
 
 /* ===== lightbox ===== */
 var lbList=[],lbIdx=0;
@@ -1155,6 +1178,43 @@ document.getElementById("yr").textContent=new Date().getFullYear();
   else{window.addEventListener('load',function(){setTimeout(hide,800);});}
 })();
 </script>
+
+<!-- ===== POPUP OZNAM — obrázok: oznam.jpg, spustí sa keď #ponuka príde do viewportu, len raz ===== -->
+<div class="popup-overlay" id="popup" role="dialog" aria-modal="true" aria-label="Oznam">
+  <div class="popup-phone">
+    <button class="popup-close" id="popup-close" aria-label="Zavrieť">✕</button>
+    <div class="phone-shell">
+      <div class="phone-notch">
+        <div class="phone-notch-spk"></div>
+        <div class="phone-notch-cam"></div>
+      </div>
+      <div class="phone-screen">
+        <img src="oznam.jpg" alt="Oznam IKIGAI Streetfood">
+      </div>
+      <div class="phone-bar"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('oznam-seen')==='1')return;
+  function closePopup(){
+    document.getElementById('popup').classList.remove('open');
+    sessionStorage.setItem('oznam-seen','1');
+  }
+  document.getElementById('popup-close').addEventListener('click',closePopup);
+  document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
+  var triggered=false;
+  var obs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting&&!triggered){
+      triggered=true;
+      obs.disconnect();
+      setTimeout(function(){document.getElementById('popup').classList.add('open');},400);
+    }
+  },{threshold:0.3});
+  obs.observe(document.getElementById('ponuka'));
+})();
 </script>
 </body>
 </html>

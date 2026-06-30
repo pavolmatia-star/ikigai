@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Súbory cookies — IKIGAI Streetfood</title>
+<meta name="description" content="Informácie o používaní súborov cookies na webe IKIGAI Streetfood.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@600;700&family=Caveat:wght@700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D33024;--red-deep:#AE2118;--cream:#F4D693;--cream-soft:#FAE8C0;--mustard:#F8B62B;--ink:#1C140E;--ink-soft:#3a2c20}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--red);color:var(--ink);line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:10;background:var(--red-deep);border-bottom:3px solid var(--ink)}
+.nav-in{max-width:1000px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;gap:12px}
+.nav-brand{display:flex;align-items:center;gap:11px;color:var(--cream-soft);font-family:'Anton';font-size:1.3rem;letter-spacing:.02em;text-decoration:none}
+.nav-brand img{width:42px;height:42px;border-radius:50%;border:2px solid var(--ink)}
+.back{margin-left:auto;font-family:'Oswald';font-weight:600;text-transform:uppercase;font-size:.85rem;color:var(--cream-soft);border:2px solid rgba(250,232,192,.4);border-radius:30px;padding:7px 16px;text-decoration:none}
+.back:hover{background:var(--mustard);color:var(--ink);border-color:var(--ink)}
+.langs{display:flex;gap:4px;margin-left:12px}
+.langs button{background:transparent;border:2px solid rgba(250,232,192,.35);color:var(--cream-soft);font-family:'Oswald';font-weight:700;font-size:.78rem;border-radius:6px;padding:3px 8px;cursor:pointer}
+.langs button.on{background:var(--mustard);color:var(--ink);border-color:var(--ink)}
+.head{max-width:1000px;margin:0 auto;padding:54px 22px 10px}
+.kicker{font-family:'Caveat',cursive;font-size:1.85rem;color:var(--mustard);line-height:1}
+.head h1{font-family:'Oswald';font-weight:700;text-transform:uppercase;color:var(--cream-soft);font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin-top:4px}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 22px 70px}
+.card{background:var(--cream);border:3px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 rgba(28,20,14,.55);padding:34px clamp(20px,4vw,44px)}
+.card h2{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:1.2rem;color:var(--red-deep);margin:26px 0 8px;letter-spacing:.01em}
+.card h2:first-child{margin-top:0}
+.card p,.card li{color:var(--ink-soft);margin:8px 0}
+.card ul{padding-left:22px}
+.card a{color:var(--red-deep);font-weight:600;text-decoration:underline}
+.updated{margin-top:26px;font-family:'Oswald';text-transform:uppercase;font-size:.8rem;color:#6c5a45;letter-spacing:.04em}
+.foot{background:var(--ink);color:#caa979;padding:26px 22px;text-align:center;font-size:.85rem;border-top:4px solid var(--mustard);display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.foot a{color:var(--mustard);text-decoration:none}
+.foot a:hover{text-decoration:underline}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+@media(max-width:560px){.nav-brand .bn{display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-in">
+  <a class="nav-brand" href="index.html"><img src="logo.jpg" alt="IKIGAI"><span class="bn">IKIGAI STREETFOOD</span></a>
+  <div class="langs">
+    <button data-lang="sk" class="on">SK</button>
+    <button data-lang="pl">PL</button>
+    <button data-lang="en">EN</button>
+  </div>
+  <a class="back" id="back-btn" href="index.html">← Späť na web</a>
+</div></header>
+
+<div class="head">
+  <div class="kicker" id="kicker-text">právne informácie</div>
+  <h1 id="h1-text">Súbory cookies</h1>
+</div>
+
+<main class="wrap">
+  <div class="card">
+
+    <!-- SK -->
+    <div data-lang-block="sk" class="active">
+      <h2>Čo sú súbory cookies</h2>
+      <p>Súbory cookies sú malé textové súbory, ktoré sa pri prehliadaní môžu uložiť vo vašom zariadení. Slúžia na zapamätanie nastavení alebo na meranie návštevnosti. Cookies si viete kedykoľvek spravovať alebo vymazať vo svojom prehliadači.</p>
+      <h2>Aké cookies používa táto stránka</h2>
+      <p>Web <strong>IKIGAI Streetfood</strong> je jednoduchá informačná stránka. <strong>Nepoužívame analytické ani marketingové cookies</strong> a nesledujeme vás na reklamné účely. Stránka nezobrazuje reklamy a neprofiluje návštevníkov.</p>
+      <p>Na prevádzku využívame len nevyhnutné technické prostriedky:</p>
+      <ul>
+        <li><strong>Hosting (Vercel):</strong> server ukladá štandardné prevádzkové logy vrátane IP adresy, a to z dôvodu prevádzky a bezpečnosti stránky.</li>
+        <li><strong>Mapa (Leaflet / OpenStreetMap, CARTO):</strong> podkladové mapové dlaždice sa načítavajú z externej služby, ktorá pri doručení obsahu môže spracovať technické údaje (napr. IP adresu).</li>
+        <li><strong>Webové písma:</strong> fonty sa načítavajú z CDN, ktoré môže pri doručení spracovať technické údaje (napr. IP adresu).</li>
+      </ul>
+      <h2>Sociálne siete a obsah z Instagramu</h2>
+      <p>Na stránke sú vložené príspevky z nášho Instagramu prostredníctvom oficiálneho nástroja Instagramu (spoločnosť Meta Platforms Ireland Ltd.). Pri načítaní stránky sa tento obsah načíta automaticky, pričom spoločnosť Meta môže do vášho zariadenia uložiť vlastné cookies a spracovať technické údaje (napr. IP adresu) v súlade so svojimi zásadami. Ak si to neželáte, môžete cookies blokovať alebo vymazať v nastaveniach svojho prehliadača. Odkaz na Facebook vedie na náš profil.</p>
+      <h2>Ako spravovať alebo odmietnuť cookies</h2>
+      <p>Používanie cookies si môžete nastaviť priamo vo svojom prehliadači, kde ich viete povoliť, obmedziť alebo úplne zakázať a existujúce cookies vymazať. Pri zakázaní niektorých cookies nemusia všetky funkcie stránky fungovať správne. Návod nájdete v nastaveniach vášho prehliadača (Chrome, Safari, Firefox, Edge a pod.).</p>
+      <h2>Viac informácií</h2>
+      <p>Podrobnosti o spracúvaní osobných údajov nájdete v dokumente <a href="ochrana-osobnych-udajov.html" id="priv-link-sk">Zásady ochrany osobných údajov</a>.</p>
+      <div class="updated">Účinné od: 30. 6. 2025</div>
+    </div>
+
+    <!-- PL -->
+    <div data-lang-block="pl">
+      <h2>Czym są pliki cookie</h2>
+      <p>Pliki cookie to małe pliki tekstowe, które mogą być zapisywane na Twoim urządzeniu podczas przeglądania stron internetowych. Służą do zapamiętywania ustawień lub mierzenia ruchu na stronie. Możesz nimi zarządzać lub je usunąć w dowolnym momencie w ustawieniach przeglądarki.</p>
+      <h2>Jakie pliki cookie używa ta strona</h2>
+      <p>Strona <strong>IKIGAI Streetfood</strong> to prosta witryna informacyjna. <strong>Nie używamy analitycznych ani marketingowych plików cookie</strong> i nie śledzimy Cię w celach reklamowych. Strona nie wyświetla reklam ani nie profiluje odwiedzających.</p>
+      <p>Do działania strony używamy wyłącznie niezbędnych środków technicznych:</p>
+      <ul>
+        <li><strong>Hosting (Vercel):</strong> serwer zapisuje standardowe logi operacyjne, w tym adres IP, w celu zapewnienia działania i bezpieczeństwa strony.</li>
+        <li><strong>Mapa (Leaflet / OpenStreetMap, CARTO):</strong> podkładowe kafelki mapy są ładowane z zewnętrznej usługi, która przy dostarczaniu treści może przetwarzać dane techniczne (np. adres IP).</li>
+        <li><strong>Czcionki internetowe:</strong> fonty są ładowane z CDN, który może przetwarzać dane techniczne przy dostarczaniu (np. adres IP).</li>
+      </ul>
+      <h2>Media społecznościowe i treści z Instagrama</h2>
+      <p>Na stronie osadzone są posty z naszego Instagrama za pomocą oficjalnego narzędzia Instagram (Meta Platforms Ireland Ltd.). Podczas ładowania strony ta treść ładuje się automatycznie, a firma Meta może zapisywać własne pliki cookie i przetwarzać dane techniczne (np. adres IP) zgodnie ze swoją polityką. Jeśli tego nie chcesz, możesz zablokować lub usunąć pliki cookie w ustawieniach przeglądarki. Link do Facebooka prowadzi do naszego profilu.</p>
+      <h2>Jak zarządzać plikami cookie lub je odrzucić</h2>
+      <p>Możesz skonfigurować używanie plików cookie bezpośrednio w przeglądarce, gdzie możesz je włączyć, ograniczyć lub całkowicie wyłączyć, a także usunąć istniejące. Wyłączenie niektórych plików cookie może spowodować nieprawidłowe działanie niektórych funkcji strony. Instrukcję znajdziesz w ustawieniach przeglądarki (Chrome, Safari, Firefox, Edge itp.).</p>
+      <h2>Więcej informacji</h2>
+      <p>Szczegółowe informacje o przetwarzaniu danych osobowych znajdziesz w dokumencie <a href="ochrana-osobnych-udajov.html?lang=pl" id="priv-link-pl">Polityka prywatności</a>.</p>
+      <div class="updated">Obowiązuje od: 30. 6. 2025</div>
+    </div>
+
+    <!-- EN -->
+    <div data-lang-block="en">
+      <h2>What are cookies</h2>
+      <p>Cookies are small text files that may be saved on your device when browsing websites. They are used to remember settings or measure site traffic. You can manage or delete cookies at any time in your browser settings.</p>
+      <h2>What cookies does this site use</h2>
+      <p><strong>IKIGAI Streetfood</strong> is a simple informational website. <strong>We do not use analytical or marketing cookies</strong> and do not track you for advertising purposes. The site does not display ads or profile visitors.</p>
+      <p>For the site's operation we use only strictly necessary technical means:</p>
+      <ul>
+        <li><strong>Hosting (Vercel):</strong> the server stores standard operational logs including your IP address, for the purpose of site operation and security.</li>
+        <li><strong>Map (Leaflet / OpenStreetMap, CARTO):</strong> map tiles are loaded from an external service, which may process technical data (e.g. IP address) when delivering content.</li>
+        <li><strong>Web fonts:</strong> fonts are loaded from a CDN, which may process technical data when delivering content (e.g. IP address).</li>
+      </ul>
+      <h2>Social media and Instagram content</h2>
+      <p>The site embeds posts from our Instagram account using the official Instagram embed tool (Meta Platforms Ireland Ltd.). When the page loads this content loads automatically, and Meta may set its own cookies and process technical data (e.g. IP address) in accordance with its policies. If you do not wish this, you can block or delete cookies in your browser settings. The Facebook link leads to our profile.</p>
+      <h2>How to manage or refuse cookies</h2>
+      <p>You can configure cookie usage directly in your browser, where you can enable, restrict or completely disable them, and delete existing ones. Disabling some cookies may cause certain site features to not work properly. Instructions can be found in your browser settings (Chrome, Safari, Firefox, Edge, etc.).</p>
+      <h2>More information</h2>
+      <p>Details about the processing of personal data can be found in the <a href="ochrana-osobnych-udajov.html?lang=en" id="priv-link-en">Privacy Policy</a> document.</p>
+      <div class="updated">Effective from: 30 June 2025</div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <span>© <span id="yr"></span> IKIGAI Streetfood</span>
+  <a id="foot-home" href="index.html">Domov</a>
+  <a id="foot-privacy" href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var TRANSLATIONS = {
+  sk: { back:'← Späť na web', kicker:'právne informácie', h1:'Súbory cookies', home:'Domov', privacy:'Ochrana osobných údajov' },
+  pl: { back:'← Powrót', kicker:'informacje prawne', h1:'Pliki cookie', home:'Strona główna', privacy:'Ochrona danych osobowych' },
+  en: { back:'← Back', kicker:'legal information', h1:'Cookie Policy', home:'Home', privacy:'Privacy policy' }
+};
+
+var currentLang = 'sk';
+
+function applyLang(l) {
+  if (!TRANSLATIONS[l]) l = 'sk';
+  currentLang = l;
+  document.documentElement.lang = l;
+  var t = TRANSLATIONS[l];
+  document.getElementById('back-btn').textContent = t.back;
+  document.getElementById('kicker-text').textContent = t.kicker;
+  document.getElementById('h1-text').textContent = t.h1;
+  document.getElementById('foot-home').textContent = t.home;
+  document.getElementById('foot-privacy').textContent = t.privacy;
+  var suffix = l === 'sk' ? '' : '?lang=' + l;
+  document.getElementById('back-btn').href = 'index.html' + (l !== 'sk' ? '#' : '');
+  document.getElementById('foot-home').href = 'index.html';
+  document.getElementById('foot-privacy').href = 'ochrana-osobnych-udajov.html' + suffix;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-lang-block') === l);
+  });
+  document.querySelectorAll('.langs button').forEach(function(b) {
+    b.classList.toggle('on', b.dataset.lang === l);
+  });
+}
+
+var urlLang = new URLSearchParams(location.search).get('lang');
+applyLang(urlLang || 'sk');
+
+document.querySelector('.langs').addEventListener('click', function(e) {
+  var b = e.target.closest('button');
+  if (b) applyLang(b.dataset.lang);
+});
+</script>
+</body>
+</html>
